@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
-const UserSchema = mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -62,7 +62,7 @@ UserSchema.methods.toJSON = function () {
   return userObject;
 };
 
-//before saving => hash the password
+//avant l'enregistrement => hacher le mot de passe
 UserSchema.pre("save", function (next) {
   const user = this;
 
