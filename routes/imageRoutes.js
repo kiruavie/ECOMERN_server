@@ -1,4 +1,4 @@
-const cloudinary = require("cloudinary").v2;
+const cloudinary = require("cloudinary");
 const router = require("express").Router();
 require("dotenv").config();
 
@@ -13,8 +13,8 @@ router.delete("/:public_id", async (req, res) => {
   try {
     await cloudinary.uploader.destroy(public_id);
     res.status(200).send();
-  } catch (error) {
-    res.status(400).send(error.message);
+  } catch (e) {
+    res.status(400).send(e.message);
   }
 });
 

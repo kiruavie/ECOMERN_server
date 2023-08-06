@@ -1,24 +1,23 @@
 const mongoose = require("mongoose");
-
-const productSchema = new mongoose.Schema(
+const ProductSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: [true, "can't be blank"],
     },
     description: {
       type: String,
-      required: [true, "ne peut être vide"],
+      required: [true, "can't be blank"],
     },
     price: {
       type: String,
-      required: [true, "ne peut être vide"],
+      required: [true, "can't be blank"],
     },
     category: {
       type: String,
-      required: [true, "ne peut être vide"],
+      required: [true, "can't be blank"],
     },
-    images: {
+    pictures: {
       type: Array,
       required: true,
     },
@@ -26,6 +25,6 @@ const productSchema = new mongoose.Schema(
   { minimize: false }
 );
 
-const Product = mongoose.model("Product", productSchema);
+const Product = mongoose.model("Product", ProductSchema);
 
 module.exports = Product;
