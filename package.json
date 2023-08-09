@@ -6,7 +6,8 @@
   "scripts": {
     "dev":"nodemon server.js",
     "start":"nodemon server.js",
-    "cors":"module"
+    "cors":"module",
+    "build" : "npm i"
   },
   "keywords": [],
   "author": "",
